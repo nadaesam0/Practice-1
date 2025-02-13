@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        .center-flex{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .center-position{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .circle-100{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .circle-200{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        .arrow{
+            background-color: #dddddd;
+            padding: 20px;
+            margin: 40px auto;
+            width: 400px;
+            position: relative;
+        }
+        .top::before{
+            content: "";
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            border: 20px solid;
+            border-color: transparent transparent #dddddd transparent;
+            left: 50%;
+            top: -50%;
+            transform: translate(-50%, -26%);
+        }
+        .right::before{
+            content: "";
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            border: 20px solid;
+            border-color: transparent  transparent  transparent #dddddd;
+            left: 100%;
+            top: 50%;
+            transform: translate(-1%, -50%);
+        }
+        .bottom::before{
+            content: "";
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            border: 20px solid;
+            border-color: #dddddd transparent transparent  transparent;
+            left: 50%;
+            top: 133%;
+            transform: translate(-50%, -50%);
+        }
+        .left::before{
+            content: "";
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            border: 20px solid;
+            border-color: transparent  #dddddd transparent  transparent ;
+            left: -19px;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="arrow top">Elzero</div>
+    <div class="arrow right">Elzero</div>
+    <div class="arrow bottom">Elzero</div>
+    <div class="arrow left">Elzero</div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        .assign-one{
+            background-color: #eeeeee;
+            width: 200px;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            font-family: sans-serif;
+            font-size: 19px;
+        }
+        @media print{
+            .assign-one{
+                font-size: 40px;
+            }
+        }
+        .parent{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        .div{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #eeeeee;
+            width: 200px;
+            text-align: center;
+            margin: 0 0 25px 0;
+            padding: 10px;
+            border: 1px solid #cccccc;
+        }
+        .parent .div :first-child{
+            color: #07988b;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.7;
+        }
+        @media (max-width: 768px) {
+            .div{
+                width: 100%;
+            }
+            .parent .div :first-child{
+                color: black;
+            }
+            
+        }
+        @media (min-width: 769px) and (max-width: 991px){
+            .div{
+                width: calc(50% - 60px);
+            }
+            .parent .div :first-child{
+                color: #fe0606
+            }
+        }
+        @media (min-width: 992px){
+            .div{
+                width: calc(25% - 50px);
+            }
+        }
+        .parent-1{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        .div-1{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #eeeeee;
+            width: 200px;
+            text-align: center;
+            margin: 0 0 25px 0;
+            padding: 10px;
+            border: 1px solid #cccccc;
+        }
+        .parent-1 .div-1 :first-child{
+            color: #07988b;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.7;
+        }
+        @media (max-width: 768px) {
+            .div-1{
+                width: 100%;
+            }
+            .parent-1 .div-1 :first-child{
+                color: black;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 991px){
+            .div-1:first-child{
+                width: calc(100% - 50px);
+            }
+            .div-1{
+                width: calc(35% - 70px);
+            }
+            .parent-1 .div-1 :first-child{
+                color: #fe0606
+            }
+        }
+        @media (min-width: 992px){
+            .div-1:first-child{
+                width: calc(100% - 50px);
+            }
+            .div-1{
+                width: calc(50% - 50px);
+            }
+            .div-1:last-child{
+                width: calc(100% - 50px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="assign-one">Elzero Web School</div>
+    <hr>
+    <div class="parent">
+        <div class="div">
+            <div>Product One</div>
+            <div>This is Product</div>
+        </div>
+        <div class="div">
+            <div>Product Two</div>
+            <div>This is Product</div>
+        </div>
+        <div class="div">
+            <div>Product Three</div>
+            <div>This is Product</div>
+        </div>
+        <div class="div">
+            <div>Product Four</div>
+            <div>This is Product</div>
+        </div>
+    </div>
+    <hr>
+    <div class="parent-1">
+        <div class="div-1">
+            <div>Product One</div>
+            <div>This is Product</div>
+        </div>
+        <div class="div-1">
+            <div>Product Two</div>
+            <div>This is Product</div>
+        </div>
+        <div class="div-1">
+            <div>Product Three</div>
+            <div>This is Product</div>
+        </div>
+        <div class="div-1">
+            <div>Product Four</div>
+            <div>This is Product</div>
+        </div>
+    </div>
+</body>
+</html>
