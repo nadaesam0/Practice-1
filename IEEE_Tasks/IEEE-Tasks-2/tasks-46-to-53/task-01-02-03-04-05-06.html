@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        .circle{
+            background-color: #eeeeee;
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            color: #ff5722;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 5px 0px 0 0 #ff5722, -5px 0px 0 0 #03a9f4;
+        }
+        .parent-1{
+            display: flex;
+            width: 600px;
+            height: 300px;
+            padding: 10px 3px;
+            margin: 20px auto;
+            background-color: #eeeeee;
+            color: snow;
+            justify-content: space-around;
+            align-items: flex-start;
+            align-content: space-between;
+            flex-wrap: wrap;
+            font-size: 15px;
+            font-family: sans-serif;
+            
+        }
+        .child{
+            background-color: #ff5722;
+            width: 185px;
+            height: 40px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        .parent-2{
+            display: flex;
+            width: 600px;
+            height: 300px;
+            padding: 10px 3px;
+            margin: 20px auto;
+            background-color: #eeeeee;
+            color: snow;
+            font-family: Arial, Helvetica, sans-serif;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            align-content: space-between;
+
+        }
+        .one,.two,.three,.four,.five,.six{
+            background-color: #607d8b;
+            width: 185px;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .one{
+            order: 6;
+            height: 40px;
+            align-self: flex-end;
+        }
+        .two{
+            order: 5;
+        }
+        .three{
+            order: 2;
+            height: 40px;
+        }
+        .four{
+            order: 3;
+        }
+        .five{
+            order: 4;
+        }
+        .six{
+            order: 1;
+        }
+        .parent-3{
+            background-color: #eeeeee;
+            display: flex;
+            width: 600px;
+            height: 300px;
+            padding:10px;
+            margin: 20px auto;
+            color: snow;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            flex-flow: column wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+
+        }
+        .one-p3,.two-p3,.three-p3{
+            background-color: #009688;
+            width: 25px;
+            height: calc(75% / 3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .two-p3{
+            align-self: flex-start;
+            width: 50%;
+        }
+        .parent-4{
+            background-color: #eeeeee;
+            color: snow;
+            display: flex;
+            padding: 10px;
+            width: 600px;
+            height: 300px;
+            margin: 20px auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            justify-content: space-between;
+
+        }
+        .one-p4,.two-p4,.three-p4,.four-p4{
+            width: calc(400px / 4);
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .one-p4{
+            order: 2;
+            background-color: #ff9800;
+        }
+        .two-p4{
+            order: 3;
+            align-self: flex-end;
+            background-color: #8bc34a;
+        }
+        .three-p4{
+            order: 4;
+            background-color: #795548;
+        }
+        .four-p4{
+            order: 1;
+            align-self: flex-end;
+            background-color: #673ab7;
+        }
+        :root{
+            --back: #dddddd;
+            --pad: 10px;
+            --marg: 10px;
+        }
+        .page{
+            background-color: #eeeeee;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 80%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .links,.logo{
+            padding: var(--pad);
+            margin: var(--marg);
+            background-color: var(--back);
+            display: flex;
+        }
+        .links{
+            list-style: none;
+            width: 90%;
+            justify-content: flex-end;
+        }
+        .logo{
+            width: 5%;
+            justify-content: center;
+            margin-right: 0px;
+        }
+        .links li{
+            padding-left: var(--pad);
+        }
+        .main-area{
+            display: flex;
+            justify-content: space-between;
+        }
+        .content,.sidebar{
+            background-color: var(--back);
+            padding: var(--pad);
+            margin: 0px var(--marg);
+            height: 265px;
+
+        }
+        .sidebar{
+            margin-left: 0;
+            width: 25%;
+        }
+        .content{
+            width: 70%;
+        }
+        .footer{
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--back);
+            padding: var(--pad);
+            margin: var(--marg);
+        }
+    </style>
+</head>
+<body>
+    <div class="circle">Elzero</div>
+    <hr>
+    <div class="parent-1">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">6</div>
+    </div>
+    <hr>
+    <div class="parent-2">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+        <div class="six">6</div>
+    </div>
+    <hr>
+    <div class="parent-3">
+        <div class="one-p3">1</div>
+        <div class="two-p3">2</div>
+        <div class="three-p3">3</div>
+    </div>
+    <hr>
+    <div class="parent-4">
+        <div class="one-p4">1</div>
+        <div class="two-p4">2</div>
+        <div class="three-p4">3</div>
+        <div class="four-p4">4</div>
+    </div>
+    <hr>
+    <div class="page">
+        <div class="header">
+            <div class="logo">Logo</div>
+            <ul class="links">
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>   
+        </div>
+        <div class="main-area">
+            <div class="content">Content</div>
+            <div class="sidebar">Sidebar</div>
+        </div>
+        <div class="footer">
+            <div class="copyright">Copyright 2021</div>
+            <div class="design">Designed By Elzero</div>
+        </div>
+    </div>
+</body>
+</html>

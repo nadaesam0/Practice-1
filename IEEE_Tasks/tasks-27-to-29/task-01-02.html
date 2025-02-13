@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .parent{
+            background-color: #eeeeee;
+            width: 800px;
+            margin: auto;
+            
+        }
+        .parent div{
+            background-color: #c5c3c3;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 15px;
+            margin-left: 15px;
+            float: left;
+        }
+        .div-1{
+            width: calc(100% - 30px);
+        }
+        .div-2{
+            width: calc((100% - 60px)/3);
+        }
+        .div-3{
+            width: calc((100% - 45px)/2);
+            
+        }
+        .div-4{
+            width: calc((100% - 75px)/4);
+            margin-bottom: 15px;
+        }
+        p{
+            clear: both;
+        }
+        .div {
+            margin: 20px auto;
+            width: 300px;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 20px;
+            background-color:#b3b3b3 ;
+            color: black;
+        }
+        .normal{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .one{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:rgb(179, 179, 179,0.1) ;
+        }
+        .two{
+            font-family: Arial, Helvetica, sans-serif;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="div-1">Full Width</div>
+        <div class="div-2">1/3</div>
+        <div class="div-2">1/3</div>
+        <div class="div-2">1/3</div>
+        <div class="div-3">1/2</div>
+        <div class="div-3">1/2</div>
+        <div class="div-4">1/4</div>
+        <div class="div-4">1/4</div>
+        <div class="div-4">1/4</div>
+        <div class="div-4">1/4</div>
+        <p></p>
+    </div>
+    <hr>
+    <div class="div normal">Normal</div>
+    <div class="div one">One</div>
+    <div class="div two">Two</div>
+
+</body>
+</html>

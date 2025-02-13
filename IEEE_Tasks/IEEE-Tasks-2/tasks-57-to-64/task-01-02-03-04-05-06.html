@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: sans-serif;
+            
+        }
+        .grid {
+            background-color: #ddd;
+            color: white;
+            padding: 20px;
+            width: 800px;
+            height: 400px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 10% auto;
+            gap: 20px;
+            
+        }
+        .grid div{
+            background-color:#607d8b;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            
+        }
+        
+        .grid .one::before{
+            content: "Element 1";
+        }
+        .grid .two::before{
+            content: "Element 2";
+        }
+        .grid .three::before{
+            content: "Element 3";
+        }
+        .grid .four::before{
+            content: "Element 4";
+        }
+        .grid .five::before{
+            content: "Element 5";
+        }
+        .grid .six::before{
+            content: "Element 6";
+        }
+        .layout{
+            height: 400px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 50px auto 50px;
+            grid-template-areas: "header header header header header " "section section section section aside " " footer footer footer footer footer ";
+           
+        }
+        div header::before{
+            content: "Header";
+            color: white;
+        }
+        header{
+            grid-area: header;
+            background-color: #03a9f4;
+            padding: 15px;
+        }
+        div section::before{
+            content: "Section";
+            color: white;
+            
+        }
+        .layout section{
+            grid-area: section;
+            background-color:#ff5722;
+            padding: 15px;
+        }
+        div aside::before{
+            content: "Aside";
+            color: white;
+            
+        }
+        .layout aside{
+            grid-area: aside;
+            background-color: #607d8b;
+            padding: 15px;
+        }
+        div footer::before{
+            content: "Footer";
+            color: white;
+            
+        }
+        .layout footer{
+            grid-area: footer;
+            background-color: #009688;
+            padding: 15px;
+        }
+        .grid-1 {
+            background-color: #ddd;
+            color: white;
+            padding: 20px;
+            width: 800px;
+            height: 400px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: auto 1fr 1fr auto;
+            grid-template-rows: auto 20px;
+            gap: 20px;
+        }
+        .grid-1 div{
+            background-color: #403f3f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .grid-2 {
+            background-color: #ddd;
+            color: white;
+            padding: 20px;
+            width: 800px;
+            margin: 20px auto;
+            height: 400px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 20px;
+        }
+        .grid-2 div{
+            background-color: #2196f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .grid-2 .one{
+            grid-column: 1 / span 3;
+        }
+        .grid-2 .two{
+            grid-column: 1 / 3;
+        }
+        .grid-2 .four{
+            grid-column: 2 / span 2;
+            grid-row: 3 / span 3;
+        }
+        .grid-2 .eight{
+            grid-column: 1 / span 3;
+        }
+        .grid-3 {
+            background-color: #ddd;
+            color: white;
+            padding: 20px;
+            width: 800px;
+            height: 400px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto;
+            align-content: space-between;
+            gap: 20px;
+        }
+        .grid-3 div{
+            background-color: #e91e63;
+            text-align: center;
+        }
+        .grid-4{
+            background-color: #eeeeee;
+            width: 80%;
+            height: 80%;
+            margin: 20px auto;
+            padding: 35px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(11,auto);
+            gap: 10px;
+        }
+        .shady, .mahmoud, .ibrahim{
+            background-color: black;
+            color: white;
+        }
+        .osama, .ahmed, .mohamed-1, .mohamed-2, .ezz, .gamal, .eman{
+            background-color: white;
+            color: black;
+        }
+        .shady, .mahmoud, .ibrahim, .osama, .ahmed, .mohamed-1, .mohamed-2, .ezz, .gamal, .eman{
+            padding: 0px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            border-bottom: 3px solid orangered;
+            position: relative;
+        }
+        h5{
+            color: #a8a8ac;
+            position: absolute;
+            margin: -25px 0px;
+        }
+        p{
+            font-size: 14px;
+        }
+        .osama{
+            grid-area: 1 / 1 / span 3 / span 2;
+        }
+        .ahmed{
+            grid-area: 1 / 3 / span 3 / 3;
+        }
+        .shady{
+            grid-area: 1 / 4 / span 9 / 4;
+        }
+        .mohamed-1{
+            grid-area: 4 / 1 / span 6 / 1;
+        }
+        .mahmoud{
+            grid-area: 4 / 2 / span 3 / span 2;
+        }
+        .ezz{
+            grid-area: 7 / 2 / span 3 / span 2;
+        }
+        .mohamed-2{
+            grid-area: 10 / 1 / span 2 / 1;
+        }
+        .ibrahim{
+            grid-area: 10 / 2 / span 2 / 2;
+        }
+        .gamal{
+            grid-area: 10 / 3 / span 2 / 3;
+        }
+        .eman{
+            grid-area: 10 / 4 / span 2 / 4;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="grid">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+    <div class="five"></div>
+    <div class="six"></div>
+</div>
+<hr>
+<div class="layout">
+    <header></header>
+    <section></section>
+    <aside></aside>
+    <footer></footer>
+</div>
+<hr>
+<div class="grid-1">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+</div>
+<hr>
+<div class="grid-2">
+    <div class="one">1</div>
+    <div class="two">2</div>
+    <div class="three">3</div>
+    <div class="four">4</div>
+    <div class="five">5</div>
+    <div class="six">6</div>
+    <div class="seven">7</div>
+    <div class="eight">8</div>
+</div>
+<hr>
+<div class="grid-3">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+<hr>
+<div class="grid-4">
+    <div class="osama">
+        <h4>Osama Mohamed</h4>
+        <h5>Full-Stack Developer</h5>
+        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum amet ipsam rerum dolores molestiae laborum iusto sequi sed dignissimos modi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quia!</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est deserunt id atque sequi mollitia vero voluptates maxime ad itaque recusandae, molestiae similique explicabo sed eaque aspernatur, cumque aut quo a? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem voluptas voluptatum nam quo odio repellat, incidunt molestias veritatis accusamus recusandae non repellendus tempore nesciunt error tenetur, maxime dolorum dolor minus!</p>
+        
+    </div>
+    <div class="ahmed">
+        <h4>Ahmed Sayed</h4>
+        <h5>IOS Developer</h5>
+        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, cumque.</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, culpa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, voluptatibus.</p>
+        
+    </div>
+    <div class="shady">
+        <h4>Shady Nabil</h4>
+        <h5>Full-Stack Developer</h5>
+        <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis minima quas soluta enim, non nostrum ullam earum harum sunt adipisci. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, non.</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam porro autem iure magnam beatae, rerum, magni repellat similique at minima laudantium itaque fugiat delectus voluptas incidunt non sit maxime? Voluptatem quae voluptates optio laborum recusandae aliquam cupiditate repudiandae eaque rerum, amet expedita vel est perferendis culpa! Dolor possimus maiores fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet laborum optio fugiat ullam, quod ipsa inventore id, quisquam quae ratione consequatur expedita ex rerum. Quidem aliquam fuga nihil quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, dolorem voluptatum culpa id est iusto possimus fugit itaque facilis, totam in laborum cumque illo eveniet voluptatibus quos a, pariatur ea.</p>
+    </div>
+    <div class="mohamed-1">
+        <h4>Mohamed Ibrahim</h4>
+        <h5>.Net Developer</h5>
+        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, ex. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere amet consectetur at, reiciendis quisquam error aperiam aspernatur voluptatibus dignissimos beatae optio consequatur ab, laborum reprehenderit aliquam voluptas unde quos eius?</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur assumenda distinctio nobis atque eum veniam enim voluptatibus aliquam exercitationem architecto tempore alias accusantium blanditiis veritatis in minima libero, ea quos totam qui eaque harum molestiae nesciunt facilis. Voluptatum sed, cupiditate at nihil hic ipsam soluta iste. Dolore nihil consequatur iure. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem voluptas sapiente hic aut fugiat sint culpa quos ea, deserunt aspernatur. Aliquid soluta corrupti repellat dolorem nemo officia sit perspiciatis cupiditate!</p>
+    </div>
+    <div class="mahmoud">
+        <h4>Mahmoud Mohamed</h4>
+        <h5>Full-Stack Developer</h5>
+        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti molestiae nam in inventore totam veniam? Cumque ex natus nesciunt accusantium! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis nobis consequatur, officiis nemo ipsam quisquam enim id reprehenderit a et dolore optio perspiciatis sunt culpa unde dignissimos laboriosam ex eligendi!</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias architecto animi a itaque. Delectus magnam voluptates numquam? Dolore in ducimus eligendi quisquam? A, delectus? Quae fugit atque voluptatem iure qui! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum cupiditate ipsa tempore beatae reiciendis nihil omnis ex. Repellendus eligendi non doloribus, unde commodi veniam debitis, eum dicta cum ipsa suscipit!</p>
+    </div>
+    <div class="ezz">
+        <h4>Ezz Eldin</h4>
+        <h5>Front-End Developer</h5>
+        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita repellat quia in ab temporibus molestiae neque asperiores saepe, totam ducimus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero eligendi quaerat praesentium reiciendis dicta quos in. Hic nam dignissimos cumque temporibus reprehenderit repellendus magnam. Ut modi impedit tempora beatae dolorem.</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, assumenda hic, provident accusamus perspiciatis quia culpa, iste saepe deleniti ad corporis asperiores. Rem, maiores doloremque! Ullam quam hic repellat quisquam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat molestiae sequi corporis a minima, atque sint adipisci excepturi veniam ratione perferendis explicabo ipsum fugit amet quisquam perspiciatis! Quas, nihil maiores?</p>
+    </div>
+    <div class="mohamed-2">
+        <h4>Mohamed Sayed</h4>
+        <h5>IOS Developer</h5>
+        <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae hic veritatis assumenda quidem?</p>
+    </div>
+    <div class="ibrahim">
+        <h4>Ibrahim Sayed</h4>
+        <h5>IOS Developer</h5>
+        <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae hic veritatis assumenda quidem?</p>
+    </div>
+    <div class="gamal">
+        <h4> Gamal Sayed</h4>
+        <h5>IOS Developer</h5>
+        <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae hic veritatis assumenda quidem?</p>
+    </div>
+    <div class="eman">
+        <h4>Eman Sated</h4>
+        <h5>IOS Developer</h5>
+        <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae hic veritatis assumenda quidem?</p>
+    </div>
+</div>
+</body>
+</html>

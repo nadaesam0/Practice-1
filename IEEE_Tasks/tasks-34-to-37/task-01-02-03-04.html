@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        .div{
+            width: 300px;
+            height: 60px;
+            margin: 20px auto;
+            text-align: center;
+            font-size: 25px;
+            background-color: #eeeeee;
+            line-height: 60px;
+        }
+        :empty{
+            background-color: #ff0000;
+        }
+        .div-2{
+            background-color: #eeeeee;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 350px;
+            padding: 30px;
+            text-align: center;
+            font-size: 17px;
+            position: relative;
+            margin: auto;
+        }
+        .div-2::first-letter{
+            font-weight: bold;
+            color: snow;
+            background-color: #ff0000;
+            padding: 15px 15px;
+            position: absolute;
+            float: left;
+            margin-left: -48px;
+            margin-top: -15px;
+        }
+        .p1{
+            background-color: #efefef;
+            width: 400px;
+            padding: 20px;
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            border-left: 6px solid #e91e63;
+            margin: 20px auto;
+        }
+        .p1::before{
+            content: attr(data-person);
+            position: absolute;
+            background-color: #dddddd;
+            padding: 15px 30px;
+            width: 50px;
+            text-align: center;
+            margin-top: -15px;
+            margin-left: -165px;
+            
+        }
+        .p1::after{
+            content: "";
+            position: absolute;
+            border: 20px solid;
+            border-color: transparent #e91e63 transparent transparent;
+            float: left;
+            left: -40px;
+            margin-top: -11px;
+        }
+        div p{
+            background-color: #eeeeee;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 400px;
+            font-size: 17px;
+            border-right: 6px solid orangered; 
+            counter-increment: number;
+            position: relative;
+        }
+        div p::before{
+            content: counter(number);
+            position: absolute;
+            background-color: orangered;
+            padding: 20px;
+            color: snow;
+            font-weight: bold;
+            margin-top: -20px;
+            margin-left: -70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div">One</div>
+    <div class="div"></div>
+    <div class="div">Three</div>
+    <hr>
+    <div class="div-2">1 Hello, Welcome To Elzero Web School</div>
+    <p style="clear: both;"></p>
+    <hr>
+    <p class="p1"data-person="Osama">This Is Very Very Long Comment Number One</p>
+    <p class="p1"data-person="Ahmed">This Is Very Very Long Comment Number Two</p>
+    <p class="p1"data-person="Sayed">This Is Very Very Long Comment Number Three</p>
+    <hr>
+    <div style=" margin-left: 35%;">
+        <p>This Is Very Very Long Product Title</p>
+        <p>This Is Very Very Long Product Title</p>
+        <p>This Is Very Very Long Product Title</p>
+        <p>This Is Very Very Long Product Title</p>
+        <p>This Is Very Very Long Product Title</p>
+        <p>This Is Very Very Long Product Title</p>
+    </div>
+</body>
+</html>
